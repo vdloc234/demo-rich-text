@@ -5,7 +5,6 @@ import "./App.css";
 
 function App() {
 	const editorRef = useRef(null);
-	const apiKeyTiny = import.meta.env.VITE_TINYMCE_API_KEY;
 
 	const [content, setContent] = useState(""); // Lưu nội dung nhập vào
 	// const [savedContent, setSavedContent] = useState(""); // Lưu nội dung sau khi nhấn Save
@@ -18,7 +17,7 @@ function App() {
 	return (
 		<div className="tinymce-container" style={{ backgroundColor: "#ccc" }}>
 			<Editor
-				apiKey={apiKeyTiny}
+				apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
 				onInit={(editor: any) => (editorRef.current = editor)}
 				initialValue="<p>Nhập nội dung tại đây...</p>"
 				onEditorChange={(newContent: SetStateAction<string>) => setContent(newContent)}
