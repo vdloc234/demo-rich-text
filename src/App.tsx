@@ -17,7 +17,7 @@ function App() {
 	return (
 		<div className="tinymce-container" style={{ backgroundColor: "#ccc" }}>
 			<Editor
-				apiKey="7dnj4lajdpyrl8z7m0wsm4tqy7ud7aisp60pxyw9fot8h2a7"
+				apiKey={process.env.TINY_KEY}
 				onInit={(editor: any) => (editorRef.current = editor)}
 				initialValue="<p>Nhập nội dung tại đây...</p>"
 				onEditorChange={(newContent: SetStateAction<string>) => setContent(newContent)}
